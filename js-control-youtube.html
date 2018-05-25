@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Control youtube video with vanilla javascript</title>
+</head>
+
+<body>
+
+<p>Add ?enablejsapi=1 to YouTube url to enable - if there's already a query on the url instead of using the ? add it to the end of the query with &enablejsapi=1</p>
+
+<div id="thevideo">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fmuUQCB3pAE?rel=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+<div><a href="#" onClick="controlVideo('playVideo');">Play Video</a></div>
+<div><a href="#" onClick="controlVideo('stopVideo');">Stop Video</a></div>
+<div><a href="#" onClick="controlVideo('pauseVideo');">Pause Video</a></div>
+
+<script>
+
+function controlVideo(vidcontrol) {
+    var div = document.getElementById("thevideo");
+    var iframe = div.getElementsByTagName("iframe")[0].contentWindow;
+    iframe.postMessage('{"event":"command","func":"' + vidcontrol + '","args":""}', '*');
+}
+
+</script>
+
+</body>
+</html>
