@@ -1,4 +1,7 @@
-Control YouTube video with vanilla javascript
+# Control YouTube video with vanilla javascript
 
 Super simple example of how to control YouTube video with vanilla javascript.
+
 Links pass pause, stop or play to control function.
+
+[You can see it on Codepen](https://codepen.io/renduh/pen/ELBRYj)
